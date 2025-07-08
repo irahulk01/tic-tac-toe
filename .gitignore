@@ -1,0 +1,30 @@
+# Ignore node_modules directory - Contains project dependencies.
+node_modules/
+
+# Ignore build output directory
+build/
+dist/ 
+
+# Ignore log files 
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore temporary files
+*.tmp
+*.bak 
+
+# Ignore OS and editor specific files
+.DS_Store
+Thumbs.db
+.vscode/ 
+.idea/ 
+
+# Ignore other common generated files
+.tsbuildinfo # If using TypeScript
+coverage/ # Test coverage reports
