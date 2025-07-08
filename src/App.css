@@ -1,42 +1,65 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Center the entire board in the viewport with a clean background */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eaeaea; /* light gray background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* The main game board styling */
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* tighter spacing between rows */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* subtle outer shadow */
+}
+
+/* Each row of blocks */
+.row {
+  display: flex;
+  gap: 6px; /* tighter spacing between blocks */
+}
+
+/* Each square block (cell) */
+.Block {
+  height: 100px;
+  width: 100px;
+  background-color: #ffffff;
+  border: 3px solid #333; /* bolder border for game feel */
+  font-size: 2.8rem; /* bigger for dramatic X/O */
+  font-weight: 700;
+  color: #222;
   text-align: center;
+  line-height: 100px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  user-select: none;
+  position: relative;
+  box-shadow: inset 0 0 0 2px #eee; /* light inner shadow */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Hover effect for interactivity */
+.Block:hover {
+  background-color: #f0f0f0;
+  box-shadow: inset 0 0 10px rgba(33, 150, 243, 0.3); /* glowing border */
+  transform: scale(1.03);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Stylize the X symbol */
+.Block.x {
+  color: #e53935; /* vibrant red */
+  text-shadow: 0 0 10px rgba(229, 57, 53, 0.5); /* glow effect */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Stylize the O symbol */
+.Block.o {
+  color: #1e88e5; /* vibrant blue */
+  text-shadow: 0 0 10px rgba(30, 136, 229, 0.5); /* glow effect */
 }
